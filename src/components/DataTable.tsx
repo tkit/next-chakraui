@@ -1,18 +1,23 @@
+/* eslint-disable react/jsx-key */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons'
 import { chakra, Table, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react'
 import { useMemo } from 'react'
 import { Column, useSortBy, useTable } from 'react-table'
+import { Stage } from '../interfaces'
 
 type TableProps = {
-  columns: Array<Column>
-  data: Array<any>
+  columns: Column[]
+  data: Stage[]
 }
 
 export const DataTable = (props: TableProps) => {
   const data = useMemo(() => props.data, [props.data])
-  const columns = useMemo(() => props.columns, [props.columns])
+  const columns = useMemo((): Column[] => props.columns, [props.columns])
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useTable({ columns, data }, useSortBy)
+    useTable<Stage>({ columns, data }, useSortBy)
 
   return (
     <Table {...getTableProps()}>

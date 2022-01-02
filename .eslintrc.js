@@ -70,14 +70,6 @@ module.exports = {
     ],
     'unused-imports/no-unused-imports-ts': 'warn',
     'sort-imports': 0,
-    'import/order': [
-      2,
-      {
-        alphabetize: {
-          order: 'asc',
-        },
-      },
-    ],
     '@typescript-eslint/no-floating-promises': 0,
   },
   settings: {
