@@ -7,6 +7,7 @@ type ImageProps = {
 
 export const StageImage = (props: ImageProps): JSX.Element => {
   const { name, src } = props
+
   return (
     <Image borderRadius="xl" boxShadow="md" w="300px" src={src} alt={name} />
   )

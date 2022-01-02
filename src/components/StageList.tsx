@@ -7,10 +7,11 @@ export const StageList = (props: {
   data: Stage[]
 }): JSX.Element => {
   const { baseUrl, data } = props
+
   return (
     <Wrap>
       {data.map((stage) => (
-        <WrapItem>
+        <WrapItem key="stageSet">
           <StageSet src={baseUrl + stage.image} name={stage.name} />
         </WrapItem>
       ))}

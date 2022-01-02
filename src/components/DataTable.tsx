@@ -10,7 +10,7 @@ type TableProps = {
 
 export const DataTable = (props: TableProps) => {
   const data = useMemo(() => props.data, [props.data])
-  const columns = useMemo(() => props.columns, [])
+  const columns = useMemo(() => props.columns, [props.columns])
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data }, useSortBy)
 
@@ -42,6 +42,7 @@ export const DataTable = (props: TableProps) => {
       <Tbody {...getTableBodyProps()}>
         {rows.map((row) => {
           prepareRow(row)
+
           return (
             <Tr {...row.getRowProps()}>
               {row.cells.map((cell) => (

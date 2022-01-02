@@ -17,6 +17,7 @@ type StageModalProps = {
 
 export const StageModal = (props: StageModalProps): JSX.Element => {
   const { name, src, isOpen, onClose } = props
+
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />

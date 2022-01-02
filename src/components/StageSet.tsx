@@ -10,6 +10,7 @@ type ImageProps = {
 export const StageSet = (props: ImageProps): JSX.Element => {
   const { name, src } = props
   const { isOpen, onOpen, onClose } = useDisclosure()
+
   return (
     <>
       <VStack

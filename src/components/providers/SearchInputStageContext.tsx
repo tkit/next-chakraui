@@ -1,10 +1,18 @@
 import { createContext, useState } from 'react'
 
-export const SearchInputStageContext = createContext<any>({})
+export type GlobalContent = {
+  searchInputText: string
+  setSearchInputText: (c: string) => void
+}
 
-export const SearchInputStageProvider = (props: { children: any }) => {
+export const SearchInputStageContext = createContext<GlobalContent | undefined>(
+  undefined
+)
+
+export const SearchInputStageProvider = (props: { children: JSX.Element }) => {
   const { children } = props
-  const [searchInputText, setSearchInputText] = useState('')
+  const [searchInputText, setSearchInputText] = useState<string>('')
+
   return (
     <SearchInputStageContext.Provider
       value={{ searchInputText, setSearchInputText }}
