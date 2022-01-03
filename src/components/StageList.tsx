@@ -11,7 +11,7 @@ export const StageList = (props: {
   return (
     <Wrap>
       {data.map((stage) => (
-        <WrapItem key="stageSet">
+        <WrapItem key={stage.image}>
           <StageSet src={baseUrl + stage.image} name={stage.name} />
         </WrapItem>
       ))}
