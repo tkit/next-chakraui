@@ -14,7 +14,7 @@ export const StageSet = (props: ImageProps): JSX.Element => {
   return (
     <>
       <VStack
-        w="160px"
+        w="170px"
         onClick={onOpen}
         _hover={{
           background: 'gray.200',
@@ -29,7 +29,7 @@ export const StageSet = (props: ImageProps): JSX.Element => {
             color="gray.500"
             fontSize="sm"
             mb="1rem"
-            w="150px"
+            w="160px"
             align="center"
           >
             {name}

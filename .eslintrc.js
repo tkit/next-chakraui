@@ -5,7 +5,6 @@ module.exports = {
     jest: true,
   },
   extends: [
-    'next',
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
@@ -13,6 +12,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'prettier',
+    'next',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
