@@ -6,10 +6,11 @@ import {
   DrawerContent,
   DrawerHeader,
   DrawerOverlay,
-  Input,
+  Flex,
   useDisclosure,
 } from '@chakra-ui/react'
 import React from 'react'
+import { MenuLink } from './MenuLink'
 
 export const DrawerMenu = (): JSX.Element => {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -39,7 +40,10 @@ export const DrawerMenu = (): JSX.Element => {
           <DrawerHeader>Menu</DrawerHeader>
 
           <DrawerBody>
-            <Input placeholder="Type here..." />
+            <Flex direction="column">
+              <MenuLink href="/" name="Top" />
+              <MenuLink href="/stage" name="Stage" />
+            </Flex>
           </DrawerBody>
         </DrawerContent>
       </Drawer>

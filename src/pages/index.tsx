@@ -1,17 +1,13 @@
-import { Flex } from '@chakra-ui/react'
+import { Box, Flex } from '@chakra-ui/react'
 import { Container } from '../components/Container'
-import { SearchInputStageProvider } from '../components/providers/SearchInputStageContext'
-import { Stages } from '../components/Stages'
 
 const Index = () => {
   return (
-    <SearchInputStageProvider>
-      <Flex direction="column">
-        <Container height="100vh" width="100vw">
-          <Stages />
-        </Container>
-      </Flex>
-    </SearchInputStageProvider>
+    <Flex direction="column">
+      <Container height="100vh" width="100vw">
+        <Box>Top Page</Box>
+      </Container>
+    </Flex>
   )
 }
 
