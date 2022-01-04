@@ -43,6 +43,7 @@ export const DrawerMenu = (): JSX.Element => {
             <Flex direction="column">
               <MenuLink href="/" name="Top" />
               <MenuLink href="/stage" name="Stage" />
+              <MenuLink href="/weapon" name="Weapon" />
             </Flex>
           </DrawerBody>
         </DrawerContent>
