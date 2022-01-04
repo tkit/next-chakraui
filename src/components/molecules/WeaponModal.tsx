@@ -11,7 +11,6 @@ import {
 } from '@chakra-ui/react'
 import { WeaponDetail } from '../../interfaces'
 import { Image } from '../atoms/Image'
-import { ModalImage } from './ModalImage'
 
 type WeaponModalProps = {
   readonly isOpen: boolean
@@ -30,7 +29,9 @@ export const WeaponModal = (props: WeaponModalProps): JSX.Element => {
         <ModalHeader>{weapon.name}</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
-          <ModalImage
+          <Image
+            borderRadius="xl"
+            boxShadow="md"
             src={baseUrl + weapon.image}
             alt={weapon.name}
             width="256px"

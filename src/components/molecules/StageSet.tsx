@@ -1,6 +1,6 @@
 import { Center, Text, useDisclosure, VStack } from '@chakra-ui/react'
+import { Image } from '../atoms/Image'
 import { StageModal } from '../molecules/StageModal'
-import { Thumbnail } from '../molecules/Thumbnail'
 
 type ImageProps = {
   readonly name: string
@@ -22,7 +22,14 @@ export const StageSet = (props: ImageProps): JSX.Element => {
           borderRadius: '0.5rem',
         }}
       >
-        <Thumbnail src={src} alt={name} width="160px" height="90px" />
+        <Image
+          borderRadius="xl"
+          boxShadow="md"
+          src={src}
+          alt={name}
+          width="160px"
+          height="90px"
+        />
         <Center>
           <Text
             isTruncated

@@ -1,6 +1,6 @@
 import { Center, Text, useDisclosure, VStack } from '@chakra-ui/react'
 import { WeaponDetail } from '../../interfaces'
-import { Thumbnail } from './Thumbnail'
+import { Image } from '../atoms/Image'
 import { WeaponModal } from './WeaponModal'
 
 type ImageProps = {
@@ -23,7 +23,9 @@ export const WeaponSet = (props: ImageProps): JSX.Element => {
           borderRadius: '0.5rem',
         }}
       >
-        <Thumbnail
+        <Image
+          borderRadius="xl"
+          boxShadow="md"
           src={baseUrl + weapon.thumbnail}
           alt={weapon.name}
           width="100px"

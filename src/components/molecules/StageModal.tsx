@@ -6,7 +6,7 @@ import {
   ModalHeader,
   ModalOverlay,
 } from '@chakra-ui/react'
-import { ModalImage } from './ModalImage'
+import { Image } from '../atoms/Image'
 
 type StageModalProps = {
   readonly isOpen: boolean
@@ -25,7 +25,14 @@ export const StageModal = (props: StageModalProps): JSX.Element => {
         <ModalHeader>{name}</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
-          <ModalImage src={src} alt={name} width="320px" height="180px" />
+          <Image
+            borderRadius="xl"
+            boxShadow="md"
+            src={src}
+            alt={name}
+            width="320px"
+            height="180px"
+          />
         </ModalBody>
       </ModalContent>
     </Modal>
