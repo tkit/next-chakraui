@@ -1,7 +1,7 @@
 import { Center, Text, useDisclosure, VStack } from '@chakra-ui/react'
-import { WeaponDetail } from '../interfaces'
+import { WeaponDetail } from '../../interfaces'
+import { Thumbnail } from './Thumbnail'
 import { WeaponModal } from './WeaponModal'
-import { WeaponThumbnail } from './WeaponThumbnail'
 
 type ImageProps = {
   readonly baseUrl: string
@@ -15,7 +15,7 @@ export const WeaponSet = (props: ImageProps): JSX.Element => {
   return (
     <>
       <VStack
-        w="170px"
+        w="140px"
         onClick={onOpen}
         _hover={{
           background: 'gray.200',
@@ -23,14 +23,19 @@ export const WeaponSet = (props: ImageProps): JSX.Element => {
           borderRadius: '0.5rem',
         }}
       >
-        <WeaponThumbnail src={baseUrl + weapon.thumbnail} name={weapon.name} />
+        <Thumbnail
+          src={baseUrl + weapon.thumbnail}
+          alt={weapon.name}
+          width="100px"
+          height="100px"
+        />
         <Center>
           <Text
             isTruncated
             color="gray.500"
             fontSize="sm"
             mb="1rem"
-            w="160px"
+            w="130px"
             align="center"
           >
             {weapon.name}

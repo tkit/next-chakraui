@@ -2,16 +2,18 @@ import { Box, Spinner } from '@chakra-ui/react'
 import axios from 'axios'
 import { useContext } from 'react'
 import useSWR from 'swr'
-import { WeaponDetail } from '../interfaces'
-import { SearchInputWeaponContext } from './providers/SearchInputWeaponContext'
-import { SearchInputWeapon } from './SearchInputWeapon'
-import { WeaponList } from './WeaponList'
+import { WeaponDetail } from '../../interfaces'
+import { SearchInput } from '../molecules/SearchInput'
+import { WeaponList } from '../organisms/WeaponList'
+import { SearchInputWeaponContext } from '../providers/SearchInputWeaponContext'
 
 const baseUrl = process.env.NEXT_PUBLIC_NINTENDO_BASE_URL
 const apiUrl = process.env.NEXT_PUBLIC_API_URL
 
 export const Weapons = (): JSX.Element => {
-  const { searchInputText } = useContext(SearchInputWeaponContext)
+  const { searchInputText, setSearchInputText } = useContext(
+    SearchInputWeaponContext
+  )
   const fetcher = (url: string) =>
     axios.get<WeaponDetail[]>(url).then((res) => {
       return res.data
@@ -30,7 +32,7 @@ export const Weapons = (): JSX.Element => {
 
   return (
     <>
-      <SearchInputWeapon />
+      <SearchInput fn={setSearchInputText} />
       <WeaponList baseUrl={baseUrl} data={filteredWeapons} />
     </>
   )

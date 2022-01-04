@@ -1,6 +1,6 @@
-import { Container } from '../components/Container'
+import { Container } from '../components/atoms/Container'
 import { SearchInputStageProvider } from '../components/providers/SearchInputStageContext'
-import { Stages } from '../components/Stages'
+import { Stages } from '../components/templates/Stages'
 
 const Stage = () => {
   return (

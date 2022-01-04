@@ -10,7 +10,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 import React from 'react'
-import { MenuLink } from './MenuLink'
+import { MenuLink } from '../atoms/ButtonLink'
 
 export const DrawerMenu = (): JSX.Element => {
   const { isOpen, onOpen, onClose } = useDisclosure()

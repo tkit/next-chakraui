@@ -1,8 +1,8 @@
 import { ChakraProvider, Divider, Heading } from '@chakra-ui/react'
 import { AppProps } from 'next/app'
-import { Container } from '../components/Container'
-import { DarkModeSwitch } from '../components/DarkModeSwitch'
-import { DrawerMenu } from '../components/DrawerMenu'
+import { Container } from '../components/atoms/Container'
+import { DarkModeSwitch } from '../components/atoms/DarkModeSwitch'
+import { DrawerMenu } from '../components/organisms/DrawerMenu'
 import theme from '../theme'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {

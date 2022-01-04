@@ -1,6 +1,6 @@
 import { Wrap, WrapItem } from '@chakra-ui/react'
-import { WeaponDetail } from '../interfaces/index'
-import { WeaponSet } from './WeaponSet'
+import { WeaponDetail } from '../../interfaces/index'
+import { WeaponSet } from '../molecules/WeaponSet'
 
 export const WeaponList = (props: {
   baseUrl: string

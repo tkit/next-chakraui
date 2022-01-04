@@ -1,5 +1,5 @@
 import { Box, Flex } from '@chakra-ui/react'
-import { Container } from '../components/Container'
+import { Container } from '../components/atoms/Container'
 
 const Index = () => {
   return (

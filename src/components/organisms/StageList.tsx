@@ -1,6 +1,6 @@
 import { Wrap, WrapItem } from '@chakra-ui/react'
-import { Stage } from '../interfaces/index'
-import { StageSet } from './StageSet'
+import { Stage } from '../../interfaces/index'
+import { StageSet } from '../molecules/StageSet'
 
 export const StageList = (props: {
   baseUrl: string

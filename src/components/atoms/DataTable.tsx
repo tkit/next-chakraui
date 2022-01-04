@@ -6,7 +6,7 @@ import { TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons'
 import { chakra, Table, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react'
 import { useMemo } from 'react'
 import { Column, useSortBy, useTable } from 'react-table'
-import { Stage } from '../interfaces'
+import { Stage } from '../../interfaces'
 
 type TableProps = {
   columns: Column[]

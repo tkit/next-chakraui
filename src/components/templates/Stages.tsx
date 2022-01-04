@@ -2,17 +2,19 @@ import { Box, Spinner } from '@chakra-ui/react'
 import axios from 'axios'
 import { useContext } from 'react'
 import useSWR from 'swr'
-import { Stage } from '../interfaces'
-import { SearchInputStageContext } from './providers/SearchInputStageContext'
-import { SearchInputStage } from './SearchInputStage'
-import { StageList } from './StageList'
-import { StageTable } from './StageTable'
+import { Stage } from '../../interfaces'
+import { SearchInput } from '../molecules/SearchInput'
+import { StageTable } from '../molecules/StageTable'
+import { StageList } from '../organisms/StageList'
+import { SearchInputStageContext } from '../providers/SearchInputStageContext'
 
 const baseUrl = process.env.NEXT_PUBLIC_NINTENDO_BASE_URL
 const apiUrl = process.env.NEXT_PUBLIC_API_URL
 
 export const Stages = (): JSX.Element => {
-  const { searchInputText } = useContext(SearchInputStageContext)
+  const { searchInputText, setSearchInputText } = useContext(
+    SearchInputStageContext
+  )
   const fetcher = (url: string) =>
     axios.get<Stage[]>(url).then((res) => {
       return res.data
@@ -28,7 +30,7 @@ export const Stages = (): JSX.Element => {
 
   return (
     <>
-      <SearchInputStage />
+      <SearchInput fn={setSearchInputText} />
       <StageList baseUrl={baseUrl} data={filteredStages} />
       <StageTable data={filteredStages} />
     </>

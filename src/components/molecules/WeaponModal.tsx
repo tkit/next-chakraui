@@ -9,9 +9,9 @@ import {
   ModalOverlay,
   VStack,
 } from '@chakra-ui/react'
-import { WeaponDetail } from '../interfaces'
-import { Image } from './Image'
-import { WeaponImage } from './WeaponImage'
+import { WeaponDetail } from '../../interfaces'
+import { Image } from '../atoms/Image'
+import { ModalImage } from './ModalImage'
 
 type WeaponModalProps = {
   readonly isOpen: boolean
@@ -30,12 +30,17 @@ export const WeaponModal = (props: WeaponModalProps): JSX.Element => {
         <ModalHeader>{weapon.name}</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
-          <WeaponImage src={baseUrl + weapon.image} name={weapon.name} />
+          <ModalImage
+            src={baseUrl + weapon.image}
+            alt={weapon.name}
+            width="256px"
+            height="256px"
+          />
           <HStack>
             <VStack>
               <Box>{weapon.sub.name}</Box>
               <Image
-                width="32"
+                width="32px"
                 height="32px"
                 src={baseUrl + weapon.sub.imageA}
                 alt={weapon.sub.name}

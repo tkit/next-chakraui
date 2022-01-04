@@ -1,5 +1,5 @@
-import { Stage } from '../interfaces/index'
-import { DataTable } from './DataTable'
+import { Stage } from '../../interfaces/index'
+import { DataTable } from '../atoms/DataTable'
 
 export const StageTable = (props: { data: Stage[] }): JSX.Element => {
   const { data } = props
