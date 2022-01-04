@@ -30,7 +30,7 @@ export const Stages = (): JSX.Element => {
 
   return (
     <>
-      <SearchInput fn={setSearchInputText} />
+      <SearchInput fn={setSearchInputText} placeholder="Search stage name" />
       <StageList baseUrl={baseUrl} data={filteredStages} />
       <StageTable data={filteredStages} />
     </>

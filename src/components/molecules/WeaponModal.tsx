@@ -1,5 +1,4 @@
 import {
-  Box,
   HStack,
   Modal,
   ModalBody,
@@ -7,6 +6,7 @@ import {
   ModalContent,
   ModalHeader,
   ModalOverlay,
+  Text,
   VStack,
 } from '@chakra-ui/react'
 import { WeaponDetail } from '../../interfaces'
@@ -38,7 +38,9 @@ export const WeaponModal = (props: WeaponModalProps): JSX.Element => {
           />
           <HStack>
             <VStack>
-              <Box>{weapon.sub.name}</Box>
+              <Text color={{ light: 'gray.500', dark: 'gray.200' }}>
+                {weapon.sub.name}
+              </Text>
               <Image
                 width="32px"
                 height="32px"
@@ -47,7 +49,9 @@ export const WeaponModal = (props: WeaponModalProps): JSX.Element => {
               />
             </VStack>
             <VStack>
-              <Box>{weapon.special.name}</Box>
+              <Text color={{ light: 'gray.500', dark: 'gray.200' }}>
+                {weapon.special.name}
+              </Text>
               <Image
                 width="32"
                 height="32px"

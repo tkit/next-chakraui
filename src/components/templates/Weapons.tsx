@@ -32,7 +32,7 @@ export const Weapons = (): JSX.Element => {
 
   return (
     <>
-      <SearchInput fn={setSearchInputText} />
+      <SearchInput fn={setSearchInputText} placeholder="Search weapon name" />
       <WeaponList baseUrl={baseUrl} data={filteredWeapons} />
     </>
   )

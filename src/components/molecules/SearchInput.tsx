@@ -4,8 +4,9 @@ import { KeyboardEvent } from 'react'
 
 export const SearchInput = (props: {
   fn: (c: string) => void
+  placeholder?: string
 }): JSX.Element => {
-  const { fn } = props
+  const { fn, placeholder } = props
 
   return (
     <Stack spacing={4} mb="2rem">
@@ -15,7 +16,7 @@ export const SearchInput = (props: {
         </InputLeftElement>
         <Input
           type="text"
-          placeholder="Search stage name"
+          placeholder={placeholder}
           onKeyUp={(e: KeyboardEvent<HTMLInputElement>) =>
             fn(e.currentTarget.value)
           }
