@@ -41,9 +41,21 @@ export const DrawerMenu = (): JSX.Element => {
 
           <DrawerBody>
             <Flex direction="column">
-              <MenuLink href="/" name="Top" />
-              <MenuLink href="/stage" name="Stage" />
-              <MenuLink href="/weapon" name="Weapon" />
+              <MenuLink
+                href="/"
+                name="Top"
+                buttonProps={{ onClick: onClose }}
+              />
+              <MenuLink
+                href="/stage"
+                name="Stage"
+                buttonProps={{ onClick: onClose }}
+              />
+              <MenuLink
+                href="/weapon"
+                name="Weapon"
+                buttonProps={{ onClick: onClose }}
+              />
             </Flex>
           </DrawerBody>
         </DrawerContent>
