@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { GetStaticProps } from 'next'
-import { useContext } from 'react'
+import { useRouter } from 'next/router'
+import { useContext, useEffect } from 'react'
 import { Container } from '../components/atoms/Container'
 import { SearchInputContext } from '../components/providers/SearchInputContext'
 import { Stages } from '../components/templates/Stages'
@@ -13,7 +14,22 @@ type StageProps = {
 }
 
 const Stage = ({ stages }: StageProps) => {
-  const { searchInputText } = useContext(SearchInputContext)
+  const router = useRouter()
+
+  const { searchInputText, setSearchInputText } = useContext(SearchInputContext)
+
+  useEffect(() => {
+    router.events.on('routeChangeComplete', () => {
+      setSearchInputText('')
+
+      return () => {
+        router.events.off('routeChangeComplete', () => {
+          setSearchInputText('')
+        })
+      }
+    })
+  })
+
   const filteredStages = stages.filter((x) =>
     x.name.toLowerCase().includes(searchInputText.toLowerCase())
   )
