@@ -1,12 +1,12 @@
 import { SearchIcon } from '@chakra-ui/icons'
 import { Input, InputGroup, InputLeftElement, Stack } from '@chakra-ui/react'
-import { KeyboardEvent } from 'react'
+import { KeyboardEvent, useContext } from 'react'
+import { SearchInputContext } from '../providers/SearchInputContext'
 
-export const SearchInput = (props: {
-  fn: (c: string) => void
-  placeholder?: string
-}): JSX.Element => {
-  const { fn, placeholder } = props
+export const SearchInput = (props: { placeholder?: string }): JSX.Element => {
+  const { placeholder } = props
+
+  const { setSearchInputText } = useContext(SearchInputContext)
 
   return (
     <Stack spacing={4} mb="2rem">
@@ -18,7 +18,7 @@ export const SearchInput = (props: {
           type="text"
           placeholder={placeholder}
           onKeyUp={(e: KeyboardEvent<HTMLInputElement>) =>
-            fn(e.currentTarget.value)
+            setSearchInputText(e.currentTarget.value)
           }
         />
       </InputGroup>

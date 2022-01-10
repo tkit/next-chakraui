@@ -5,19 +5,19 @@ export type GlobalContent = {
   setSearchInputText: (c: string) => void
 }
 
-export const SearchInputStageContext = createContext<GlobalContent | undefined>(
+export const SearchInputContext = createContext<GlobalContent | undefined>(
   undefined
 )
 
-export const SearchInputStageProvider = (props: { children: JSX.Element }) => {
+export const SearchInputProvider = (props: { children: JSX.Element }) => {
   const { children } = props
   const [searchInputText, setSearchInputText] = useState<string>('')
 
   return (
-    <SearchInputStageContext.Provider
+    <SearchInputContext.Provider
       value={{ searchInputText, setSearchInputText }}
     >
       {children}
-    </SearchInputStageContext.Provider>
+    </SearchInputContext.Provider>
   )
 }
